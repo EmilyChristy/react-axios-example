@@ -1,23 +1,26 @@
 import "./App.css";
 import axios from "axios";
-import { useState } from "react";
 
 function App() {
-  const [products, setProducts] = useState(null);
+  var data = {
+    title: "Blue bike",
+    price: 145.99,
+    description: "It's an amazing product",
+    image: "https://i.pravatar.cc",
+    category: "toys",
+  };
 
-  //const apiUrl = "https://fakestoreapi.com";
-
-  const getData = () => {
-    // GET request for products from fakestore API
+  const postData = () => {
+    // POST request for products from fakestore API
     axios({
-      method: "get",
+      method: "post",
       baseURL: "https://fakestoreapi.com",
       url: "/products",
+      payload: data,
     })
       .then(function (response) {
         // handle success
         console.log(response);
-        setProducts(response.data);
       })
       .catch(function (error) {
         // handle error
@@ -29,42 +32,15 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>
-          GET using <code>Axios</code>.
+          POST using <code>Axios</code>.
         </p>
       </header>
 
       <p>
-        <button onClick={getData}>GET data</button>
+        <button onClick={postData}>POST data</button>
       </p>
-      <ul>
-        {products?.map((x) => {
-          return <li key={x.id}>{x.title}</li>;
-        })}
-      </ul>
     </div>
   );
 }
 
 export default App;
-
-// axios
-// .create({
-//   headers: { Authorization: `Bearer ${response.accessToken}` },
-// })
-// .get(props.endpoint)
-// .then(function (response) {
-//   console.log("Request response:", response);
-//   var result: string = JSON.stringify(
-//     props.printResult(response.data)
-//   );
-//   console.log("Processed result: " + result);
-//   setData(result);
-// })
-// .catch(function (error) {
-//   setError("Error fetching data: " + error.message);
-//   console.error(error);
-// })
-// .then(function () {
-//   // always executed
-//   setLoading(false);
-// });
