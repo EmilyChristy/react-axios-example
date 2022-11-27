@@ -1,10 +1,10 @@
-# Simple Axios GET example in a React app
+# Simple Axios POST example in a React app
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-It is a simple example of how to GET data using Axios from a React app.
+It is a simple example of how to POST data using Axios from a React app.
 
-A blog post explaining how it works can be found here - https://www.brainstormcreative.co.uk/react-js/use-axios-in-react-to-get-api-data/
+A blog post explaining how it works can be found here - https://www.brainstormcreative.co.uk/react-js/use-axios-in-react-to-post-api-data/
 
 This app uses the Fake Store API - https://fakestoreapi.com/
 
